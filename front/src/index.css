@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-header,
+/* header,
 header > div {
   display: flex;
   align-items: center;
@@ -30,9 +30,9 @@ header > div {
 header {
   gap: 1em;
   justify-content: center;
-}
+} */
 
-.search-input {
+/* .search-input {
   display: flex;
   align-items: center;
   padding: 0.8em;
@@ -47,11 +47,11 @@ header {
   caret-color: white;
   font-size: 1.3em;
   color: white;
-}
+} */
 
 svg {
-  width: 2em;
-  height: min-content;
+  width: 100%;
+  /* height: fit-content; */
 }
 
 /* img {

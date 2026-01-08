@@ -1,15 +1,14 @@
-# Elysia with Bun runtime
+Made using:
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+- Bun
+- Node.js -> ElysiaJS
+- Prisma
+- Neon (Postgresql)
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+Available public APIs:
 
-Open http://localhost:3000/ with your browser to see the result.
+/list
+
+/list?search=<gamename> (ability to fuzzy search is preferred)
+
+/list?pageIndex=<number>&pageSize=<number>

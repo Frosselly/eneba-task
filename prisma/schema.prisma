@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+generator prismabox { 
+  provider = "prismabox"
+  typeboxImportDependencyName = "elysia"
+  typeboxImportVariableName = "t"
+  inputModel = true
+  output   = "../generated/prismabox"
+} 
+
+
+
+model Game {
+  id                 String  @id @default(cuid())
+  name               String @unique
+  region             String
+  cashback           Int?     
+  cover              String?  // image URL
+
+  priceAmount        Int  
+  priceCurrency      String 
+
+  retailPriceAmount  Int
+  retailPriceCurrency String
+
+  whishlisted        Int
+  app                String
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+}

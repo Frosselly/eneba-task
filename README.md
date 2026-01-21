@@ -9,6 +9,6 @@ Available public APIs:
 
 /list
 
-/list?search=<gamename> (ability to fuzzy search is preferred)
+/list?search=<gamename> (with fuzzy search)
 
 /list?pageIndex=<number>&pageSize=<number>

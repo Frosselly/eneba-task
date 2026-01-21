@@ -1,13 +1,8 @@
 
 import { Elysia } from 'elysia'
-
-// import { Games } from './service'
 import { GamesModel } from './model'
 import { prisma } from '../../lib/prisma';
 import { Game, Prisma } from '../../generated/prisma/client';
-
-
-
 
 
 export const GamesController = () => new Elysia()

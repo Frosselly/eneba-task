@@ -2,7 +2,7 @@
 import { Elysia } from 'elysia'
 import { GamesModel } from './model'
 import { prisma } from '../../lib/prisma';
-import type { Game } from '../../generated/prisma/client';
+import { Game, Prisma } from '../../generated/prisma/client';
 
 
 export const GamesController = () => new Elysia()
@@ -17,12 +17,12 @@ export const GamesController = () => new Elysia()
             const hasFilter = search.trim().length > 0;
 
             const whereSql = hasFilter
-                ? `
-                    WHERE   
+                ? Prisma.sql`
+                    WHERE
                     name % ${search}
                     OR name ILIKE '%' || ${search} || '%'
                 `
-                : '';
+                : Prisma.empty;
 
             //Raw SQL because prisma doesn't support fuzzy
             const [countResult, games] = await Promise.all([

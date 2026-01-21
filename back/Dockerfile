@@ -9,10 +9,11 @@ COPY bun.lock bun.lock
 RUN bun install
 
 COPY ./src ./src
+COPY prisma prisma
 
 ENV NODE_ENV=production
 
-RUN bunx --bun prisma generate
+RUN bunx prisma generate
 
 RUN bun run build
 

@@ -1,4 +1,4 @@
-import { Elysia, t } from "elysia";
+import { Elysia } from "elysia";
 import { openapi } from '@elysiajs/openapi'
 import { GamesController } from "./modules/games";
 

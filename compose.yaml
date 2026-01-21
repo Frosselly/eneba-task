@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build: ./front
+    ports:
+      - "8000:80"
+    env_file:
+      - ./front/.env
+
+  backend:
+    build: ./back
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./back/.env

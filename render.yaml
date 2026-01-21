@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: elysia-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    rootDir: back
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_UNPOOLED
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          name: vite-frontend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+
+  - type: web
+    name: vite-frontend
+    runtime: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    rootDir: front
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          name: elysia-backend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL

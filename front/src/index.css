@@ -17,8 +17,43 @@
   max-width: 1280px;
 
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
+}
+
+.w-shape {
+  width: 300px;
+  height: 150px;
+  background: #111;
+  color: white;
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+}
+
+@theme {
+  --color-primary: #4518ac;
+  --color-primary-light: #6a47b8;
+  --color-primary-dark: #1f0a4d;
+
+  --color-yellow: #fad318;
+  --color-green: #84e51e;
+  --color-teal: #63e3c2;
+  --color-dark-red: oklch(50.5% 0.213 27.518);
+
+  --color-dark-gray: #6a7282;
+}
+
+.loader {
+  border: 8px solid #fff;
+  border-top: 8px solid #23c299;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 /* header,

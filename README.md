@@ -1,18 +1,31 @@
 # Eneba front page recreation
 
+Front page recreation with back end for Eneba internship task.
+Project features a dashboard in which there is a selection of products. Product cards are modular, animated and handle different data based on what it includes.
+There is paging and some basic filtering.
+
+## Tech stack
+
 Vite + ElysiaJs
 
-Front:
+### Front:
 - Vite
 - React
 - React Query
 - React router
 - zustand
 
-Back:
+### Back:
 - Node.js
 - ElysiaJS
 - PrismaORM
 - Neon database (PostgreSQL)
 
-Can be launched using docker compose for backend will need neon database keys, but there is data seeder prisma/seed.js which adds 8 elements.
+## Installation
+Requires neon database key.
+
+Using docker compose -d
+```
+docker compose up
+```
+Contains seeder in [seed.ts](./back/prisma/seed.ts) with 8 default elements for different scenarios.
